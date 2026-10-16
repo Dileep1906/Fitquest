@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FITQUEST | Your World Moves When You Move</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     AUTHENTICATION
+===================================================== -->
+
+<section class="auth-screen" id="authScreen">
+
+    <div class="auth-card">
+
+        <div class="auth-logo">
+            ⚡
+        </div>
+
+        <div class="auth-tag">
+            FITQUEST
+        </div>
+
+        <h1 id="authTitle">
+            Welcome Back
+        </h1>
+
+        <p id="authSubtitle">
+            Sign in and continue your journey.
+        </p>
+
+        <!-- LOGIN -->
+
+        <form id="loginForm">
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+                required
+            >
+
+            <button
+                type="submit"
+                class="auth-btn">
+
+                LOGIN ⚡
+
+            </button>
+
+        </form>
+
+
+        <!-- REGISTER -->
+
+        <form
+            id="registerForm"
+            style="display:none;">
+
+            <input
+                type="text"
+                id="registerUsername"
+                placeholder="Username"
+                required
+            >
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Email"
+                required
+            >
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Password"
+                minlength="6"
+                required
+            >
+
+            <button
+                type="submit"
+                class="auth-btn">
+
+                CREATE ACCOUNT 🚀
+
+            </button>
+
+        </form>
+
+
+        <div
+            class="auth-message"
+            id="authMessage">
+        </div>
+
+
+        <button
+            class="switch-auth"
+            id="switchAuth">
+
+            Don't have an account? Create one
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN APPLICATION
+===================================================== -->
+
+<div class="app" id="mainApp">
+
+    <!-- =================================================
+         TOP BAR
+    ================================================== -->
+
+    <header class="topbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ⚡
+            </div>
+
+            FITQUEST
+
+        </div>
+
+
+        <div class="top-actions">
+
+            <button
+                class="profile-btn"
+                id="profileBtn">
+
+                👤 Profile
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         WELCOME PAGE
+    ================================================== -->
+
+    <section
+        class="page active"
+        id="welcomePage">
+
+        <div class="welcome-content">
+
+            <div class="welcome-text">
+
+                <div class="tag">
+                    YOUR FITNESS ADVENTURE STARTS HERE
+                </div>
+
+                <h1>
+                    YOUR WORLD<br>
+                    <span>MOVES</span> WHEN<br>
+                    YOU MOVE.
+                </h1>
+
+                <p>
+                    Turn your real-world movement into quests,
+                    rewards and progress. Every step brings
+                    your FITQUEST world closer to life.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    id="startBtn">
+
+                    START MY JOURNEY ⚡
+
+                </button>
+
+            </div>
+
+
+            <div class="hero-world">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="world">
+                    🌍
+                </div>
+
+                <div class="floating-card card-energy">
+
+                    ⚡ <b>0</b><br>
+                    <small>ENERGY</small>
+
+                </div>
+
+                <div class="floating-card card-xp">
+
+                    🏆 <b>0</b><br>
+                    <small>XP</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         DASHBOARD PAGE
+    ================================================== -->
+
+    <section
+        class="page"
+        id="dashboardPage">
+
+        <div class="dashboard">
+
+            <div class="dashboard-header">
+
+                <div>
+
+                    <div class="tag">
+                        YOUR PERSONAL DASHBOARD
+                    </div>
+
+                    <h2>
+                        READY TO <span>MOVE?</span>
+                    </h2>
+
+                    <p>
+                        Welcome back,
+                        <strong id="dashboardUsername">
+                            Explorer
+                        </strong>.
+                        Every movement counts.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="chooseActivityBtn">
+
+                    START A QUEST ⚡
+
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+
+                        <strong id="energyValue">
+                            0
+                        </strong>
+
+                        <span>
+                            ENERGY
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🏆
+                    </div>
+
+                    <div>
+
+                        <strong id="xpValue">
+                            0
+                        </strong>
+
+                        <span>
+                            XP
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🔥
+                    </div>
+
+                    <div>
+
+                        <strong id="streakValue">
+                            0
+                        </strong>
+
+                        <span>
+                            DAY STREAK
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <strong id="distanceValue">
+                            0.00
+                        </strong>
+
+                        <span>
+                            KM TOTAL
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD CARDS -->
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card current-quest">
+
+                    <div class="card-label">
+                        TODAY'S QUEST
+                    </div>
+
+                    <h3>
+                        NO ACTIVE QUEST
+                    </h3>
+
+                    <p>
+                        Choose an activity and begin your next
+                        adventure.
+                    </p>
+
+                    <button
+                        class="secondary-btn"
+                        id="quickStartBtn">
+
+                        CHOOSE ACTIVITY →
+
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-label">
+                        QUEST HISTORY
+                    </div>
+
+                    <div class="empty-history">
+
+                        🗺️
+
+                        <p>
+                            Your completed quests will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-footer">
+
+                <span>
+                    Completed Quests
+                </span>
+
+                <strong id="questsValue">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PROFILE PAGE
+    ================================================== -->
+
+    <section
+        class="page"
+        id="profilePage">
+
+        <div class="page-container">
+
+            <button
+                class="back-btn"
+                data-back="dashboardPage">
+
+                ← BACK TO DASHBOARD
+
+            </button>
+
+
+            <div class="tag">
+                YOUR FITQUEST IDENTITY
+            </div>
+
+
+            <h2>
+                YOUR <span>PROFILE.</span>
+            </h2>
+
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+                    👤
+                </div>
+
+
+                <h2 id="profileUsername">
+                    Explorer
+                </h2>
+
+
+                <p id="profileEmail">
+                    user@email.com
+                </p>
+
+
+                <div class="profile-stats">
+
+                    <div>
+
+                        <strong id="profileDistance">
+                            0.00
+                        </strong>
+
+                        <span>
+                            KM
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="profileXP">
+                            0
+                        </strong>
+
+                        <span>
+                            XP
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="profileStreak">
+                            0
+                        </strong>
+
+                        <span>
+                            STREAK
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="logout-btn"
+                    id="profileLogoutBtn">
+
+                    LOGOUT
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ACTIVITY PAGE
+    ================================================== -->
+
+    <section
+        class="page"
+        id="activityPage">
+
+        <div class="page-container">
+
+            <button
+                class="back-btn"
+                data-back="dashboardPage">
+
+                ← BACK TO DASHBOARD
+
+            </button>
+
+
+            <div class="tag">
+                STEP 01 — CHOOSE YOUR PATH
+            </div>
+
+
+            <h2>
+                HOW DO YOU <span>MOVE?</span>
+            </h2>
+
+
+            <p class="page-description">
+
+                Choose an activity.
+                Your quest will track your real-world
+                movement automatically.
+
+            </p>
+
+
+            <div class="activities">
+
+
+                <button
+                    class="activity-card"
+                    data-activity="Walking"
+                    data-icon="🚶"
+                    data-target="2">
+
+                    <span class="activity-icon">
+                        🚶
+                    </span>
+
+                    <span class="activity-name">
+                        Walking
+                    </span>
+
+                    <span class="activity-hint">
+                        Reach 2 km
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="activity-card"
+                    data-activity="Running"
+                    data-icon="🏃"
+                    data-target="3">
+
+                    <span class="activity-icon">
+                        🏃
+                    </span>
+
+                    <span class="activity-name">
+                        Running
+                    </span>
+
+                    <span class="activity-hint">
+                        Reach 3 km
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="activity-card"
+                    data-activity="Cycling"
+                    data-icon="🚴"
+                    data-target="5">
+
+                    <span class="activity-icon">
+                        🚴
+                    </span>
+
+                    <span class="activity-name">
+                        Cycling
+                    </span>
+
+                    <span class="activity-hint">
+                        Reach 5 km
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="activity-card"
+                    data-activity="Sports"
+                    data-icon="🏸"
+                    data-target="1">
+
+                    <span class="activity-icon">
+                        🏸
+                    </span>
+
+                    <span class="activity-name">
+                        Sports
+                    </span>
+
+                    <span class="activity-hint">
+                        Reach 1 km
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="activity-card"
+                    data-activity="Exercise"
+                    data-icon="🤸"
+                    data-target="1">
+
+                    <span class="activity-icon">
+                        🤸
+                    </span>
+
+                    <span class="activity-name">
+                        Exercise
+                    </span>
+
+                    <span class="activity-hint">
+                        Reach 1 km
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <div class="selection-bar">
+
+                <span id="selectionText">
+                    Choose an activity to continue
+                </span>
+
+
+                <button
+                    class="primary-btn"
+                    id="continueBtn">
+
+                    CONTINUE →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         QUEST PAGE
+    ================================================== -->
+
+    <section
+        class="page"
+        id="questPage">
+
+        <div class="page-container">
+
+            <button
+                class="back-btn"
+                data-back="activityPage">
+
+                ← CHANGE ACTIVITY
+
+            </button>
+
+
+            <div class="quest-layout">
+
+                <div class="quest-info">
+
+                    <div class="tag">
+                        STEP 02 — TODAY'S MISSION
+                    </div>
+
+
+                    <h2>
+                        YOUR FIRST<br>
+                        <span>ADVENTURE.</span>
+                    </h2>
+
+
+                    <p class="page-description">
+
+                        Every journey begins with one completed quest.
+                        Move in the real world and complete your mission
+                        to bring energy to your FITQUEST world.
+
+                    </p>
+
+
+                    <div class="chosen-activity">
+
+                        <span id="questIcon">
+                            🏃
+                        </span>
+
+                        <div>
+
+                            <small>
+                                YOUR CHOSEN ACTIVITY
+                            </small>
+
+                            <strong id="questActivity">
+                                RUNNING
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn"
+                        id="startQuestBtn">
+
+                        START QUEST ⚡
+
+                    </button>
+
+                </div>
+
+
+                <div class="quest-preview">
+
+                    <div class="quest-badge">
+                        QUEST 01
+                    </div>
+
+
+                    <h3 id="questTitle">
+                        THE FIRST STEP
+                    </h3>
+
+
+                    <p id="questDescription">
+
+                        Begin your journey and complete your
+                        activity to generate energy for your world.
+
+                    </p>
+
+
+                    <div class="target-box">
+
+                        <span>
+                            QUEST TARGET
+                        </span>
+
+                        <strong id="targetValue">
+                            3 KM
+                        </strong>
+
+                    </div>
+
+
+                    <div class="reward-preview">
+
+                        <div>
+
+                            <small>
+                                ENERGY
+                            </small>
+
+                            <b>
+                                +100 ⚡
+                            </b>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>
+                                XP
+                            </small>
+
+                            <b>
+                                +50 🏆
+                            </b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         LIVE QUEST
+    ================================================== -->
+
+    <section
+        class="page"
+        id="livePage">
+
+        <div class="page-container">
+
+            <div class="live-header">
+
+                <div>
+
+                    <div class="tag">
+                        ● LIVE GPS TRACKING
+                    </div>
+
+                    <h2>
+
+                        <span id="liveIcon">
+                            🏃
+                        </span>
+
+                        <span id="liveActivity">
+                            RUNNING
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="danger-btn"
+                    id="stopQuestBtn">
+
+                    STOP QUEST
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="tracking-status"
+                id="trackingStatus">
+
+                📍 Waiting to start GPS...
+
+            </div>
+
+
+            <div class="live-stats">
+
+
+                <div class="live-stat">
+
+                    <span>
+                        DISTANCE
+                    </span>
+
+                    <strong id="liveDistance">
+                        0.00
+                    </strong>
+
+                    <small>
+                        KM
+                    </small>
+
+                </div>
+
+
+                <div class="live-stat">
+
+                    <span>
+                        TARGET
+                    </span>
+
+                    <strong id="liveTarget">
+                        3.00
+                    </strong>
+
+                    <small>
+                        KM
+                    </small>
+
+                </div>
+
+
+                <div class="live-stat">
+
+                    <span>
+                        TIME
+                    </span>
+
+                    <strong id="liveTime">
+                        00:00
+                    </strong>
+
+                </div>
+
+
+                <div class="live-stat">
+
+                    <span>
+                        SPEED
+                    </span>
+
+                    <strong id="liveSpeed">
+                        0.0
+                    </strong>
+
+                    <small>
+                        KM/H
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-section">
+
+                <div class="progress-info">
+
+                    <span>
+                        QUEST PROGRESS
+                    </span>
+
+                    <strong id="progressPercent">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+                    </div>
+
+                </div>
+
+
+                <p id="progressText">
+
+                    GPS tracking will update your progress automatically.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         COMPLETE PAGE
+    ================================================== -->
+
+    <section
+        class="page"
+        id="completePage">
+
+        <div class="complete-content">
+
+            <div class="complete-icon">
+                🎉
+            </div>
+
+
+            <div class="tag">
+                QUEST COMPLETED
+            </div>
+
+
+            <h2>
+                YOU DID <span>IT!</span>
+            </h2>
+
+
+            <p>
+
+                Your movement powered up your FITQUEST world.
+                The rewards have been added to your progress.
+
+            </p>
+
+
+            <div class="complete-rewards">
+
+                <div>
+
+                    <strong>
+                        +100 ⚡
+                    </strong>
+
+                    <span>
+                        ENERGY
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        +50 🏆
+                    </strong>
+
+                    <span>
+                        XP
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        +1 🔥
+                    </strong>
+
+                    <span>
+                        STREAK
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                id="dashboardBtn">
+
+                GO TO DASHBOARD →
+
+            </button>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
